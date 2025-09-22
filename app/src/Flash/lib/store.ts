@@ -1,10 +1,10 @@
-// /Users/goldlabel/GitHub/flash/app/src/Uberedux/store.ts
+// /Users/goldlabel/GitHub/flash/app/src/Flash/lib/store.ts
 'use client';
 import { configureStore, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { persistStore, persistReducer } from 'redux-persist';
 import baseStorage from 'redux-persist/lib/storage';
 import { combineReducers } from 'redux';
-import { initialState } from './initialState';
+import { initialState } from '../initialState';
 
 const persist = false;
 

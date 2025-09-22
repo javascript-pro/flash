@@ -1,4 +1,4 @@
-// ella/next/src/gl-core/cartridges/System/hooks/useThemeMode.tsx
+// /Users/goldlabel/GitHub/flash/app/src/Flash/hooks/useThemeMode.tsx
 /*
     Hook returning theme mode "light" | "dark"
 */

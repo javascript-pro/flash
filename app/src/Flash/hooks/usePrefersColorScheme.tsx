@@ -1,4 +1,4 @@
-// ella/next/src/gl-core/cartridges/System/hooks/usePrefersColorScheme.tsx
+// /Users/goldlabel/GitHub/flash/app/src/Flash/hooks/usePrefersColorScheme.tsx
 import * as React from "react";
 
 export function usePrefersColorScheme() {
