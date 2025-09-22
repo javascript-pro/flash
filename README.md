@@ -3,8 +3,7 @@
 https://github.com/javascript-pro/flash/tree/staging/app/src/Flash
 
 
-A modular animation cartridge for [Goldlabel](https://goldlabel.pro), inspired by the spirit of old-school Flash.  
-Built with **Next.js, React, GSAP, and TypeScript**.
+A modular animation cartridge for [Goldlabel](https://goldlabel.pro), inspired by the spirit of old-skool Flash. Built with **React, GSAP, and TypeScript**.
 
 ## 🚀 Quick Start
 
@@ -15,9 +14,9 @@ npm install
 npm run dev
 ```
 
-## ✨ What is Flash?
+## ✨ What is this repo?
 
-Flash is a standalone, open-source playground for creating **movies** — small animations written in TypeScript (we call them **actionscript** files). Each movie can target one or many **movieclips** (reusable React components) and bring them to life using GSAP.
+A standalone, open-source playground for creating **movies** — small animations written in TypeScript (we call them **actionscript** files). Each movie can target one or many **movieclips** (reusable React components) and bring them to life using GSAP.
 
 Think of it as a lightweight, modern take on the Flash timeline:
 
@@ -35,5 +34,3 @@ Think of it as a lightweight, modern take on the Flash timeline:
 - Configurable movies with props (`speed`, `color`, `loop`).  
 - Redux-backed store for flags, playback state, and debug data.  
 - Plug-and-play movieclips and quick demo examples.  
-
-
