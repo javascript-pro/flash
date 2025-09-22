@@ -2,7 +2,14 @@
 import React from 'react';
 import { Box } from '@mui/material';
 import { TFlashConfig } from './types';
-import { Trace, Stage, MovieClip, Macromedia, Pingpongball } from '../Flash';
+import { 
+  Trace, 
+  Stage, 
+  MovieClip, 
+  Macromedia, 
+  Pingpongball,
+  
+} from '../Flash';
 import ActionScript from './actionscript';
 
 export default function Flash({ config = {} }: { config?: TFlashConfig }) {
