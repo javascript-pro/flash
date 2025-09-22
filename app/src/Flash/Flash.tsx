@@ -25,9 +25,7 @@ export default function Flash({ config = {} }: { config?: TFlashConfig }) {
 
   return (
     <UbereduxProvider>
-      
       <Box
-        ref={stageRef}
         sx={{
           display: 'flex',
           alignItems: 'center',
@@ -36,10 +34,7 @@ export default function Flash({ config = {} }: { config?: TFlashConfig }) {
           height: '100%',
         }}
       >
-        <Stage id="stage_1" width={width} height={height}>
-
-          
-
+        <Stage ref={stageRef} id="stage_1" width={width} height={height}>
           <Macromedia id="mc_macromedia" />
           <Pingpongball id="mc_pingpongball" />
           <MovieClip id="mc_trace">
@@ -47,7 +42,6 @@ export default function Flash({ config = {} }: { config?: TFlashConfig }) {
           </MovieClip>
         </Stage>
       </Box>
-
     </UbereduxProvider>
   );
 }
