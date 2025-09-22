@@ -22,6 +22,7 @@ export default React.forwardRef<HTMLDivElement, TStage>(function Stage(
         height: '100%',
       }}
     >
+      <pre>dad</pre>
       {children}
     </Box>
   );

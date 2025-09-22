@@ -1,7 +1,6 @@
 // /Users/goldlabel/GitHub/core/gl-core/cartridges/Flash/movieclips/Macromedia.tsx
 import React from 'react';
 import { TMovieClip } from '../types';
-import { MovieClip } from '../../Flash';
 import { useTheme, SvgIcon } from '@mui/material';
 
 export default function Macromedia(props: TMovieClip) {
@@ -9,7 +8,6 @@ export default function Macromedia(props: TMovieClip) {
   const color1 = theme.palette.primary.main;
 
   return (
-    <MovieClip {...props}>
       <SvgIcon>
         <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
           <rect fill="none" x="0" y="0" width="24" height="24" />
@@ -20,6 +18,5 @@ export default function Macromedia(props: TMovieClip) {
           />
         </g>
       </SvgIcon>
-    </MovieClip>
   );
 }

@@ -2,20 +2,13 @@
 import React from 'react';
 import { Box } from '@mui/material';
 import { TFlashConfig } from './types';
-import { 
-  Trace, 
-  Stage, 
-  MovieClip, 
-  Macromedia, 
-  Pingpongball,
-  UbereduxProvider,
-} from '../Flash';
+import { Trace, Stage, MovieClip, Macromedia, Pingpongball, UbereduxProvider } from '../Flash';
 import ActionScript from './actionscript';
 
 export default function Flash({ config = {} }: { config?: TFlashConfig }) {
   const { width = 300, height = 200 } = config;
   const stageRef = React.useRef<HTMLDivElement | null>(null);
-  
+
   React.useEffect(() => {
     if (stageRef.current) {
       const flash = new ActionScript(stageRef.current);
@@ -34,9 +27,15 @@ export default function Flash({ config = {} }: { config?: TFlashConfig }) {
           height: '100%',
         }}
       >
-        <Stage ref={stageRef} id="stage_1" width={width} height={height}>
-          <Macromedia id="mc_macromedia" />
-          <Pingpongball id="mc_pingpongball" />
+        <Stage id="stage_1" width={width} height={height} ref={stageRef}>
+          <MovieClip id="mc_macromedia">
+            <Macromedia />
+          </MovieClip>
+
+          <MovieClip id="mc_pingpongball">
+            <Pingpongball />
+          </MovieClip>
+
           <MovieClip id="mc_trace">
             <Trace />
           </MovieClip>

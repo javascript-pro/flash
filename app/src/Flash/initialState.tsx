@@ -5,5 +5,6 @@ import { TState } from './types';
 export const initialState: TState = {
   vs: pJSON.version,
   created: Date.now(),
-  cartridge: 'flash'
+  cartridge: 'flash',
+  clips: [],
 };
