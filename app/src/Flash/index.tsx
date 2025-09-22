@@ -8,6 +8,7 @@ import Pingpongball from './movieclips/Pingpongball';
 // optional
 import{subMUITheme} from './lib/subMUITheme';
 import Icon from './lib/Icon';
+import {setUbereduxKey} from './lib/store';
 
 export {
     Flash,
@@ -21,4 +22,5 @@ export {
 export {
     Icon,
     subMUITheme,
+    setUbereduxKey,
 }
