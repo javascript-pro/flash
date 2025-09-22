@@ -2,11 +2,13 @@
 import React from 'react';
 import { Box } from '@mui/material';
 import { TStage } from '../types';
+import { useRedux} from '../';
 
 export default React.forwardRef<HTMLDivElement, TStage>(function Stage(
   { id, width, height, children },
   ref
 ) {
+  const s = useRedux();
   return (
     <Box
       id={id}
@@ -22,7 +24,7 @@ export default React.forwardRef<HTMLDivElement, TStage>(function Stage(
         height: '100%',
       }}
     >
-      <pre>dad</pre>
+      <pre>s: {JSON.stringify(s, null, 2)}</pre>
       {children}
     </Box>
   );
