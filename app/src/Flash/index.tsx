@@ -9,6 +9,11 @@ import Pingpongball from './movieclips/Pingpongball';
 import{subMUITheme} from './lib/subMUITheme';
 import Icon from './lib/Icon';
 import {setUbereduxKey} from './lib/store';
+import UbereduxProvider from './lib/UbereduxProvider';
+import {useRedux} from './hooks/useRedux';
+import {useDispatch} from './hooks/useDispatch';
+import {useIsMobile} from './hooks/useIsMobile';
+import {usePrefersColorScheme} from './hooks/usePrefersColorScheme';
 
 export {
     Flash,
@@ -20,7 +25,12 @@ export {
 }
 // optional
 export {
+    setUbereduxKey,
     Icon,
     subMUITheme,
-    setUbereduxKey,
+    UbereduxProvider,
+    useRedux,
+    useDispatch,
+    useIsMobile,
+    usePrefersColorScheme,
 }

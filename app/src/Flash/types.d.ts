@@ -15,10 +15,6 @@ export type TMovieClip = {
   color?: string;
 };
 
-export type TTrace = {
-  children?: React.ReactNode;
-};
-
 export type TFlashConfig = {
   width?: number | string;
   height?: number | string;
@@ -32,4 +28,6 @@ export type TStage = {
   children?: React.ReactNode;
 };
 
-
+export type TTrace = {
+  children?: React.ReactNode;
+};

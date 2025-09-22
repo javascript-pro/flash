@@ -8,7 +8,7 @@ import {
   MovieClip, 
   Macromedia, 
   Pingpongball,
-  
+  UbereduxProvider,
 } from '../Flash';
 import ActionScript from './actionscript';
 
@@ -24,23 +24,27 @@ export default function Flash({ config = {} }: { config?: TFlashConfig }) {
   }, []);
 
   return (
-    <Box
-      ref={stageRef}
-      sx={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        width: '100%',
-        height: '100%',
-      }}
-    >
-      <Stage id="stage_1" width={width} height={height}>
-        <Macromedia id="mc_macromedia" />
-        <Pingpongball id="mc_pingpongball" />
-        <MovieClip id="mc_trace">
-          <Trace />
-        </MovieClip>
-      </Stage>
-    </Box>
+    <UbereduxProvider>
+      
+      <Box
+        ref={stageRef}
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          width: '100%',
+          height: '100%',
+        }}
+      >
+        <Stage id="stage_1" width={width} height={height}>
+          <Macromedia id="mc_macromedia" />
+          <Pingpongball id="mc_pingpongball" />
+          <MovieClip id="mc_trace">
+            <Trace />
+          </MovieClip>
+        </Stage>
+      </Box>
+
+    </UbereduxProvider>
   );
 }
