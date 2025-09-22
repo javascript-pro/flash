@@ -1,6 +1,6 @@
-// 
-import { TUbereduxDispatch } from '../../Uberedux/types';
-import { setUbereduxKey } from '../../Uberedux';
+// /Users/goldlabel/GitHub/flash/app/src/Flash/actions/setSetting.tsx 
+import { TUbereduxDispatch } from '../types';
+import { setUbereduxKey } from '../';
 
 /**
  * Updates or creates a setting by key in the Uberedux store.

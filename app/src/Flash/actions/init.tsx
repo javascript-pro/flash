@@ -1,7 +1,7 @@
-// core/gl-core/cartridges/Lingua/actions/setLang.tsx
+// /Users/goldlabel/GitHub/flash/app/src/Flash/actions/init.tsx
 
 import { TUbereduxDispatch } from '../types';
-import { setUbereduxKey } from '../../../';
+import { setUbereduxKey } from '../';
 
 export const init =
   (): any => async (dispatch: TUbereduxDispatch, getState: () => any) => {
