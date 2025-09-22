@@ -1,0 +1,10 @@
+// ella/next/src/gl-core/cartridges/System/hooks/useThemeMode.tsx
+/*
+    Hook returning theme mode "light" | "dark"
+*/
+import { useSelector } from 'react-redux';
+import { TRootState } from '../../Uberedux';
+
+export function useThemeMode(): 'light' | 'dark' {
+  return useSelector((state: TRootState) => state.redux.settings.themeMode as any);
+}

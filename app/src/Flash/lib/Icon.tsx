@@ -1,5 +1,23 @@
 'use client';
 import * as React from 'react';
+import PingpongballIcon from './SVGIcons/PingpongballIcon';
+import OliverIcon from './SVGIcons/OliverIcon';
+import FallmanagerIcon from './SVGIcons/FallmanagerIcon';
+import FlickrIcon from './SVGIcons/FlickrIcon';
+import OpenAIIcon from './SVGIcons/OpenAIIcon';
+import MacromediaIconIcon from './SVGIcons/MacromediaIcon';
+import BlokeyIcon from './SVGIcons/BlokeyIcon';
+import WordpressIcon from './SVGIcons/WordpressIcon';
+import GoldlabelIcon from './SVGIcons/GoldlabelOutlined';
+import ChromeIcon from './SVGIcons/ChromeIcon';
+import SafariIcon from './SVGIcons/SafariIcon';
+import EdgeIcon from './SVGIcons/EdgeIcon';
+import FirefoxIcon from './SVGIcons/FirefoxIcon';
+import IphoneIcon from './SVGIcons/IphoneIcon';
+import LinuxIcon from './SVGIcons/LinuxIcon';
+import MacIcon from './SVGIcons/MacIcon';
+import WindowsIcon from './SVGIcons/WindowsIcon';
+import XboxIcon from './SVGIcons/XboxIcon';
 import PluginsIcon from '@mui/icons-material/ExtensionOutlined';
 import AskIcon from '@mui/icons-material/QuestionAnswerOutlined';
 import WhenIcon from '@mui/icons-material/CalendarMonthOutlined';
@@ -90,7 +108,7 @@ import YoutubeIcon from '@mui/icons-material/YouTube';
 import ForgetIcon from '@mui/icons-material/PsychologyOutlined';
 import AIIcon from '@mui/icons-material/ModelTrainingOutlined';
 import FolderIcon from '@mui/icons-material/FolderOutlined';
-import CompanyIcon from '@mui/icons-material/Apartment';
+import CompanyIcon from '@mui/icons-material/Shop2Outlined';
 import DesignIcon from '@mui/icons-material/PaletteOutlined';
 import FeatureIcon from '@mui/icons-material/RocketLaunchOutlined';
 import SitemapIcon from '@mui/icons-material/AccountTree';
@@ -122,96 +140,158 @@ import TickIcon from '@mui/icons-material/DoneOutline';
 import FilesIcon from '@mui/icons-material/Topic';
 import PDFIcon from '@mui/icons-material/PictureAsPdf';
 import UserIcon from '@mui/icons-material/Face';
-import KIIcon from '@mui/icons-material/BackHandOutlined';
-import VisitorsIcon from '@mui/icons-material/PeopleAltOutlined';
-import VisitorIcon from '@mui/icons-material/PermIdentity';
-import BikeIcon from '@mui/icons-material/TwoWheeler';
-import DashboardIcon from '@mui/icons-material/Dashboard';
-import LogsIcon from '@mui/icons-material/List';
-import RocketIcon from '@mui/icons-material/Rocket';
-import ExpertiseIcon from '@mui/icons-material/Rocket';
-import Web3DIcon from '@mui/icons-material/ThreeDRotation';
-import TeamIcon from '@mui/icons-material/People';
+import KIIcon from '@mui/icons-material/Castle';
+import DatabaseIcon from '@mui/icons-material/Storage';
+import TablesIcon from '@mui/icons-material/BackupTable';
+import TableIcon from '@mui/icons-material/TableRows';
+import AKIIcon from '@mui/icons-material/BackHand';
+import FaceIcon from '@mui/icons-material/Face';
+import VersichererIcon from '@mui/icons-material/AccountBalance';
+import MitarbeiterIcon from '@mui/icons-material/Diversity1';
+import AnwaltIcon from '@mui/icons-material/Gavel';
+import SachverstaendigeIcon from '@mui/icons-material/CarRepair';
+import PlatzhalterIcon from '@mui/icons-material/TextFields';
+import AbschnitteIcon from '@mui/icons-material/Segment';
+import VorlagenIcon from '@mui/icons-material/DesignServices';
+import PolizeiIcon from '@mui/icons-material/LocalPolice';
+import ZahlungenIcon from '@mui/icons-material/Euro';
+import BeteiligteIcon from '@mui/icons-material/PersonalInjury';
+import SchadenpositionenIcon from '@mui/icons-material/SummarizeOutlined';
+import SchadentypIcon from '@mui/icons-material/Handyman';
+import StaatsanwaltschaftenIcon from '@mui/icons-material/Gavel';
+import ZeilenIcon from '@mui/icons-material/Checklist';
+import AufbauIcon from '@mui/icons-material/Construction';
+import TestIcon from '@mui/icons-material/ReportGmailerrorred';
+import RequiredIcon from '@mui/icons-material/NewReleasesOutlined';
+import EtikettenIcon from '@mui/icons-material/LabelOutlined';
+
+import ShowRequiredIcon from '@mui/icons-material/DoNotDisturbOff';
+import HideRequiredIcon from '@mui/icons-material/DoNotDisturbOnTotalSilence';
 
 export type TIcon = {
   icon:
-    | 'core'
-    | 'web3d'
-    | 'expertise'
-    | 'tick'
-    | 'files'
+    | 'schadentyp'
+    | 'etiketten'
+    | 'test'
+
+    | 'showrequired'
+    | 'hiderequired'
+
+    | 'staatsanwaltschaften'
+    | 'beteiligte'
+    | 'schadenpositionen'
+    | 'polizei'
+    | 'zahlungen'
+    | 'tables'
+    | 'table'
+    | 'vorlagen'
+    | 'abschnitte'
     | 'case'
-    | 'bike'
     | 'caseclosed'
-    | 'rocket'
     | 'cases'
-    | 'pdf'
-    | 'ki'
+    | 'akten'
     | 'caseclock'
-    | 'aicase'
-    | 'plus'
-    | 'user'
-    | 'users'
-    | 'visitor'
-    | 'visitors'
-    | 'auth'
-    | 'add'
-    | 'clients'
-    | 'ai'
-    | 'design'
-    | 'dog'
-    | 'bouncer'
-    | 'uberedux'
+    | 'upload'
+    | 'database'
+    | 'sachverstaendige'
+    | 'platzhalter'
+    | 'mitarbeiter'
+    | 'anwalt'
+    | 'pdfs'
+    | 'fallmanager'
+    | 'view'
     | 'more'
+    | 'user'
+    | 'ki'
+    | 'users'
+    | 'pdf'
+    | 'tick'
+    | 'plus'
+    | 'face'
+    | 'dog'
+    | 'aki'
+    | 'about'
+    | 'clients'
+    | 'link'
+    | 'album'
+    | 'flickr'
+    | 'photo'
+    | 'preview'
+    | 'add'
+    | 'account'
+    | 'download'
+    | 'job'
+    | 'copy'
+    | 'linkedin'
+    | 'core'
+    | 'cartridge'
+    | 'uberedux'
+    | 'good-fit'
+    | 'products'
+    | 'flash'
+    | 'speak-write'
+    | 'admin'
+    | 'private'
+    | 'company'
+    | 'feature'
+    | 'auth'
+    | 'design'
+    | 'ai'
+    | 'ask'
     | 'forget'
     | 'folder'
-    | 'company'
-    | 'link'
-    | 'feature'
-    | 'ask'
-    | 'home'
-    | 'save'
-    | 'boot'
+    | 'fingerprint'
     | 'youtube'
+    | 'boot'
     | 'hide'
     | 'show'
-    | 'why'
+    | 'save'
     | 'filters'
     | 'filter'
+    | 'fullscreen'
+    | 'examples'
     | 'signup'
     | 'what'
-    | 'how'
     | 'when'
     | 'who'
-    | 'scuba'
+    | 'how'
+    | 'legal'
+    | 'geo'
     | 'docker'
-    | 'plugins'
+    | 'scuba'
     | 'js'
     | 'javascript'
-    | 'google'
+    | 'oliver'
+    | 'life'
+    | 'balance'
     | 'bug'
+    | 'geolocator'
+    | 'google'
     | 'lingua'
     | 'plugin'
     | 'doc'
     | 'reset'
-    | 'fullscreen'
+    | 'accommodation'
+    | 'spy'
+    | 'seed'
     | 'github'
+    | 'members'
+    | 'notifyer'
+    | 'notifyr'
+    | 'pingpong'
     | 'close'
-    | 'geolocator'
+    | 'bus'
     | 'darkmode'
     | 'lightmode'
     | 'pool'
-    | 'bus'
     | 'boat'
-    | 'bar'
     | 'car'
+    | 'bar'
     | 'shop'
+    | 'home'
     | 'fish'
     | 'mobile'
-    | 'spy'
-    | 'seed'
     | 'blog'
-    | 'accommodation'
     | 'search'
     | 'cancel'
     | 'delete'
@@ -219,16 +299,14 @@ export type TIcon = {
     | 'backoffice'
     | 'edit'
     | 'example'
-    | 'examples'
-    | 'team'
-    | 'geo'
+    | 'goldlabel'
+    | 'wordpress'
     | 'where'
     | 'whatsapp'
     | 'expand'
     | 'web'
     | 'twitter'
     | 'facebook'
-    | 'fingerprint'
     | 'ting'
     | 'settings'
     | 'email'
@@ -238,99 +316,196 @@ export type TIcon = {
     | 'star'
     | 'food'
     | 'medical'
+    | 'versicherer'
     | 'scooter'
     | 'diveshop'
     | 'diving'
+    | 'news'
+    | 'aicase'
     | 'activities'
     | 'left'
     | 'down'
     | 'up'
+    | 'sitemap'
     | 'right'
     | 'menu'
     | 'success'
     | 'categories'
     | 'category'
+    | 'mandant'
+    | 'mandanten'
+    | 'tings'
     | 'info'
     | 'warning'
     | 'error'
     | 'signout'
     | 'api'
     | 'work'
-    | 'life'
-    | 'legal'
-    | 'balance'
     | 'signin'
+    | 'blokey'
+    | 'android'
+    | 'openai'
+    | 'chrome'
     | 'desktop'
     | 'desktopmac'
-    | 'account'
-    | 'members'
-    | 'news'
-    | 'notifyer'
-    | 'notifyr'
-    | 'admin'
-    | 'private'
-    | 'sitemap'
-    | 'good-fit'
-    | 'products'
-    | 'speak-write'
-    | 'cartridge'
-    | 'copy'
-    | 'linkedin'
-    | 'job'
-    | 'download'
-    | 'preview'
-    | 'photo'
-    | 'album'
-    | 'upload'
-    | 'about'
-    | 'dashboard'
-    | 'logs';
+    | 'edge'
+    | 'linux'
+    | 'windows'
+    | 'xbox'
+    | 'mac'
+    | 'why'
+    | 'iphone'
+    | 'safari'
+    | 'firefox'
+    | 'plugins'
+    | 'files'
+    | 'zeilen'
+    | 'aufbau'
+    | 'required'
+    | 'bouncer';
+    
   color?: any;
 };
-
 
 export default function Icon({ icon, color }: TIcon) {
   if (!color) color = 'inherit';
   let iconFragment = <React.Fragment />;
   switch (icon) {
+    case 'aki':
+      iconFragment = <AKIIcon color={color} />;
+      break;
+    case 'zeilen':
+      iconFragment = <ZeilenIcon color={color} />;
+      break;
+
+          case 'showrequired':
+      iconFragment = <ShowRequiredIcon color={color} />;
+      break;
+          case 'hiderequired':
+      iconFragment = <HideRequiredIcon color={color} />;
+      break;
+      
+
+
+    case 'aufbau':
+      iconFragment = <AufbauIcon color={color} />;
+      break;    
+    case 'schadenpositionen':
+      iconFragment = <SchadenpositionenIcon color={color} />;
+      break;
+
+    case 'staatsanwaltschaften':
+      iconFragment = <StaatsanwaltschaftenIcon color={color} />;
+      break;
+    case 'test':
+      iconFragment = <TestIcon color={color} />;
+      break;
+    case 'schadentyp':
+      iconFragment = <SchadentypIcon color={color} />;
+      break;
+    case 'etiketten':
+      iconFragment = <EtikettenIcon color={color} />;
+      break;
+    case 'polizei':
+      iconFragment = <PolizeiIcon color={color} />;
+      break;
+
+    case 'beteiligte':
+      iconFragment = <BeteiligteIcon color={color} />;
+      break;
+    case 'required':
+      iconFragment = <RequiredIcon color={color} />;
+      break;      
+
+    case 'zahlungen':
+      iconFragment = <ZahlungenIcon color={color} />;
+      break;
+      
+
+    case 'sachverstaendige':
+      iconFragment = <SachverstaendigeIcon color={color} />;
+      break;
+
+    case 'vorlagen':
+      iconFragment = <VorlagenIcon color={color} />;
+      break;
+      
+
+    case 'abschnitte':
+      iconFragment = <AbschnitteIcon color={color} />;
+      break;
+
+    case 'platzhalter':
+      iconFragment = <PlatzhalterIcon color={color} />;
+      break;
+
     case 'core':
       iconFragment = <CoreIcon color={color} />;
       break;
 
-    case 'web3d':
-      iconFragment = <Web3DIcon color={color} />;
+    case 'view':
+      iconFragment = <ShowIcon color={color} />;
       break;
 
-    case 'expertise':
-      iconFragment = <ExpertiseIcon color={color} />;
-      break;
 
     case 'tick':
       iconFragment = <TickIcon color={color} />;
+      break;
+
+    case 'database':
+      iconFragment = <DatabaseIcon color={color} />;
+      break;
+
+    case 'versicherer':
+      iconFragment = <VersichererIcon color={color} />;
+      break;
+      
+    case 'tables':
+      iconFragment = <TablesIcon color={color} />;
+      break;
+    case 'table':
+      iconFragment = <TableIcon color={color} />;
+      break;
+
+    case 'face':
+      iconFragment = <FaceIcon color={color} />;
+      break;
+
+    case 'mitarbeiter':
+      iconFragment = <MitarbeiterIcon color={color} />;
+      break;
+
+    case 'anwalt':
+      iconFragment = <AnwaltIcon color={color} />;
       break;
 
     case 'files':
       iconFragment = <FilesIcon color={color} />;
       break;
 
-    case 'case':
-      iconFragment = <CaseIcon color={color} />;
+    case 'mandant':
+      iconFragment = <UserIcon color={color} />;
       break;
 
-    case 'bike':
-      iconFragment = <BikeIcon color={color} />;
+    case 'mandanten':
+      iconFragment = <UserIcon color={color} />;
+      break;
+      case 'case':
+      iconFragment = <CaseIcon color={color} />;
       break;
 
     case 'caseclosed':
       iconFragment = <CaseClosedIcon color={color} />;
       break;
 
-    case 'rocket':
-      iconFragment = <RocketIcon color={color} />;
+    case 'akten':
+      iconFragment = <CasesIcon color={color} />;
       break;
-
     case 'cases':
       iconFragment = <CasesIcon color={color} />;
+      break;
+    case 'pdfs':
+      iconFragment = <PDFIcon color={color} />;
       break;
 
     case 'pdf':
@@ -359,15 +534,6 @@ export default function Icon({ icon, color }: TIcon) {
     case 'users':
       iconFragment = <UserIcon color={color} />;
       break;
-
-    case 'visitor':
-      iconFragment = <VisitorIcon color={color} />;
-      break;
-
-    case 'visitors':
-      iconFragment = <VisitorsIcon color={color} />;
-      break;
-
     case 'auth':
       iconFragment = <UserIcon color={color} />;
       break;
@@ -380,6 +546,10 @@ export default function Icon({ icon, color }: TIcon) {
       iconFragment = <ClientsIcon color={color} />;
       break;
 
+    case 'flash':
+      iconFragment = <MacromediaIconIcon color={color} />;
+      break;
+
     case 'ai':
       iconFragment = <AIIcon color={color} />;
       break;
@@ -390,7 +560,7 @@ export default function Icon({ icon, color }: TIcon) {
       iconFragment = <DogIcon color={color} />;
       break;
     case 'bouncer':
-      iconFragment = <SigninIcon color={color} />;
+      iconFragment = <BlokeyIcon color={color} />;
       break;
 
     case 'uberedux':
@@ -480,7 +650,9 @@ export default function Icon({ icon, color }: TIcon) {
     case 'javascript':
       iconFragment = <JavascriptIcon color={color} />;
       break;
-
+    case 'oliver':
+      iconFragment = <OliverIcon color={color} />;
+      break;
     case 'google':
       iconFragment = <GoogleIcon color={color} />;
       break;
@@ -577,10 +749,12 @@ export default function Icon({ icon, color }: TIcon) {
     case 'examples':
       iconFragment = <ExampleIcon color={color} />;
       break;
-    case 'team':
-      iconFragment = <TeamIcon color={color} />;
+    case 'goldlabel':
+      iconFragment = <GoldlabelIcon color={color} />;
       break;
-
+    case 'wordpress':
+      iconFragment = <WordpressIcon color={color} />;
+      break;
     case 'geo':
       iconFragment = <WhereIcon color={color} />;
       break;
@@ -698,13 +872,55 @@ export default function Icon({ icon, color }: TIcon) {
     case 'signin':
       iconFragment = <SigninIcon color={color} />;
       break;
+    case 'blokey':
+      iconFragment = <BlokeyIcon color={color} />;
+      break;
+    case 'android':
+      iconFragment = <AndroidIcon color={color} />;
+      break;
+    case 'openai':
+      iconFragment = <OpenAIIcon color={color} />;
+      break;
+    case 'chrome':
+      iconFragment = <ChromeIcon color={color} />;
+      break;
     case 'desktop':
       iconFragment = <DesktopIcon color={color} />;
       break;
     case 'desktopmac':
       iconFragment = <DesktopMacIcon color={color} />;
       break;
-    
+    case 'edge':
+      iconFragment = <EdgeIcon color={color} />;
+      break;
+    case 'firefox':
+      iconFragment = <FirefoxIcon color={color} />;
+      break;
+    case 'safari':
+      iconFragment = <SafariIcon color={color} />;
+      break;
+    case 'iphone':
+      iconFragment = <IphoneIcon color={color} />;
+      break;
+    case 'mac':
+      iconFragment = <MacIcon color={color} />;
+      break;
+    case 'xbox':
+      iconFragment = <XboxIcon color={color} />;
+      break;
+    case 'windows':
+      iconFragment = <WindowsIcon color={color} />;
+      break;
+    case 'linux':
+      iconFragment = <LinuxIcon color={color} />;
+      break;
+    case 'pingpong':
+      iconFragment = <PingpongballIcon color={color} />;
+      break;
+
+    case 'fallmanager':
+      iconFragment = <FallmanagerIcon color={color} />;
+      break;
 
     case 'account':
       iconFragment = <AccountIcon color={color} />;
@@ -766,7 +982,10 @@ export default function Icon({ icon, color }: TIcon) {
       iconFragment = <PreviewIcon color={color} />;
       break;
 
-   
+    case 'flickr':
+      iconFragment = <FlickrIcon color={color} />;
+      break;
+
     case 'photo':
       iconFragment = <PhotoIcon color={color} />;
       break;
@@ -780,14 +999,6 @@ export default function Icon({ icon, color }: TIcon) {
 
     case 'about':
       iconFragment = <AboutIcon color={color} />;
-      break;
-
-    case 'dashboard':
-      iconFragment = <DashboardIcon color={color} />;
-      break;
-
-    case 'logs':
-      iconFragment = <LogsIcon color={color} />;
       break;
 
     default:

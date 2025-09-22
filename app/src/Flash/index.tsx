@@ -1,12 +1,13 @@
 // /Users/goldlabel/GitHub/flash/app/src/Flash/index.tsx
 import Flash from './Flash';
-import Trace from './components/Trace';
-import Stage from './components/Stage';
-import MovieClip from './components/MovieClip';
-import Icon from './components/Icon';
-
+import Trace from './lib/Trace';
+import Stage from './lib/Stage';
+import MovieClip from './lib/MovieClip';
 import Macromedia from './movieclips/Macromedia';
 import Pingpongball from './movieclips/Pingpongball';
+// optional
+import{subMUITheme} from './lib/subMUITheme';
+import Icon from './lib/Icon';
 
 export {
     Flash,
@@ -15,5 +16,9 @@ export {
     MovieClip,
     Macromedia,
     Pingpongball,
+}
+// optional
+export {
     Icon,
+    subMUITheme,
 }
