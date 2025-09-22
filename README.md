@@ -11,7 +11,7 @@ A modular animation cartridge for [Goldlabel](https://goldlabel.pro), inspired b
 git clone https://github.com/javascript-pro/flash.git
 cd flash
 npm install
-npm run dev
+npm start
 ```
 
 ## ✨ What is this repo?

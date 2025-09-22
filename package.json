@@ -1,0 +1,20 @@
+{
+  "name": "flash",
+  "version": "8.0.0",
+  "description": "Flash-like React implementation",
+  "scripts": {
+    "start": "cd ./app && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/javascript-pro/flash.git"
+  },
+  "keywords": [
+    "flash",
+    "javascript",
+    "react",
+    "gsap"
+  ],
+  "author": "goldlabel",
+  "license": "MIT"
+}
