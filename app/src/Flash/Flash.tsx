@@ -15,7 +15,7 @@ import ActionScript from './actionscript';
 export default function Flash({ config = {} }: { config?: TFlashConfig }) {
   const { width = 300, height = 200 } = config;
   const stageRef = React.useRef<HTMLDivElement | null>(null);
-
+  
   React.useEffect(() => {
     if (stageRef.current) {
       const flash = new ActionScript(stageRef.current);
@@ -37,6 +37,9 @@ export default function Flash({ config = {} }: { config?: TFlashConfig }) {
         }}
       >
         <Stage id="stage_1" width={width} height={height}>
+
+          
+
           <Macromedia id="mc_macromedia" />
           <Pingpongball id="mc_pingpongball" />
           <MovieClip id="mc_trace">
