@@ -34,3 +34,4 @@ Think of it as a lightweight, modern take on the Flash timeline:
 - Configurable movies with props (`speed`, `color`, `loop`).  
 - Redux-backed store for flags, playback state, and debug data.  
 - Plug-and-play movieclips and quick demo examples.  
+
