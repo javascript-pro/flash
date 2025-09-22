@@ -1,5 +1,8 @@
 # Flash 🎬
 
+https://github.com/javascript-pro/flash/tree/staging/app/src/Flash
+
+
 A modular animation cartridge for [Goldlabel](https://goldlabel.pro), inspired by the spirit of old-school Flash.  
 Built with **Next.js, React, GSAP, and TypeScript**.
 
@@ -33,5 +36,4 @@ Think of it as a lightweight, modern take on the Flash timeline:
 - Redux-backed store for flags, playback state, and debug data.  
 - Plug-and-play movieclips and quick demo examples.  
 
----
 
