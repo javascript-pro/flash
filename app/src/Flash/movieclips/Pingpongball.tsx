@@ -1,10 +1,10 @@
 // /Users/goldlabel/GitHub/core/gl-core/cartridges/Flash/movieclips/Pingpongball.tsx
 import React from 'react';
-import { TMovieClipProps } from '../types';
+import { TMovieClip } from '../types';
 import { SvgIcon, useTheme } from '@mui/material';
 import { MovieClip } from '../../Flash';
 
-export default function Pingpongball({ color, ...props }: TMovieClipProps) {
+export default function Pingpongball({ color, ...props }: TMovieClip) {
   const theme = useTheme();
   const smile = theme.palette.background.default;
   const mainColor = color || theme.palette.primary.main;

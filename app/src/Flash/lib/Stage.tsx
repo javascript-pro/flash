@@ -1,9 +1,9 @@
 // /app/src/Flash/components/Stage.tsx
 import React from 'react';
 import { Box } from '@mui/material';
-import { TStageProps } from '../types';
+import { TStage } from '../types';
 
-export default function Stage({ id, width, height, children }: TStageProps) {
+export default function Stage({ id, width, height, children }: TStage) {
   return (
     <Box
       id={id}

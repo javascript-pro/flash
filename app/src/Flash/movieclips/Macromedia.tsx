@@ -1,10 +1,10 @@
 // /Users/goldlabel/GitHub/core/gl-core/cartridges/Flash/movieclips/Macromedia.tsx
 import React from 'react';
-import { TMovieClipProps } from '../types';
+import { TMovieClip } from '../types';
 import { MovieClip } from '../../Flash';
 import { useTheme, SvgIcon } from '@mui/material';
 
-export default function Macromedia(props: TMovieClipProps) {
+export default function Macromedia(props: TMovieClip) {
   const theme = useTheme();
   const color1 = theme.palette.primary.main;
 
