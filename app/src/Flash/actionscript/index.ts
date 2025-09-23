@@ -1,4 +1,5 @@
-// /Users/goldlabel/GitHub/flash/app/src/Flash/actionscript/index.ts
+// /app/src/Flash/actionscript/index.ts
+import setup from './setup';
 
 export default class ActionScript {
   private target: HTMLElement | null;
@@ -13,12 +14,18 @@ export default class ActionScript {
       // Simple example: flash the background
       this.target.style.transition = 'background 0.5s ease';
       this.target.style.background = 'yellow';
-
       setTimeout(() => {
         if (this.target) this.target.style.background = '';
       }, 1000);
     } else {
       console.log('[ActionScript] init called with no target');
     }
+  }
+
+  setup(id: string, options: any) {
+    setTimeout(() => {
+      setup(id, options);
+    }, 100)
+    
   }
 }

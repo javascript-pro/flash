@@ -2,9 +2,9 @@
 import React from 'react';
 import { Box } from '@mui/material';
 import { TFlashConfig } from './types';
-import { 
+import {
   UbereduxProvider,
-  // Trace, 
+  System,
   Stage, 
   MovieClip,
   Bolt,
@@ -14,45 +14,42 @@ import ActionScript from './actionscript';
 export default function Flash({ config = {} }: { config?: TFlashConfig }) {
   const { width = 300, height = 200 } = config;
   const stageRef = React.useRef<HTMLDivElement | null>(null);
-
+  
   React.useEffect(() => {
-    if (stageRef.current) {
       const flash = new ActionScript(stageRef.current);
-      flash.init();
-    }
+      flash.setup("mc_bolt", { speed: 5 });
   }, []);
 
   return (
     <UbereduxProvider>
-      <Box
-        sx={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          width: '100%',
-          height: '100%',
-        }}
-      >
-        <Stage id="stage_intro" width={width} height={height} ref={stageRef}>
-          
-          <MovieClip 
-            // border 
-            id="mc_bolt" 
-            // width={200} 
-            // height={400}
-          >
-            <Bolt />
-          </MovieClip>
-          
-          {/* <MovieClip 
-            border
-            id="mc_trace"
-            width={42} 
-            height={42}>
-            <Trace />
-          </MovieClip> */}
-        </Stage>
-      </Box>
+      <System>
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '100%',
+            height: '100%',
+          }}
+        >
+          <Stage id="intro" width={width} height={height} ref={stageRef}>
+            <MovieClip id="mc_bolt">
+              <Bolt />
+            </MovieClip>
+          </Stage>
+        </Box>
+      </System>
     </UbereduxProvider>
   );
 }
+
+
+/* 
+  <MovieClip 
+    border
+    id="mc_trace"
+    width={42} 
+    height={42}>
+    <Trace />
+  </MovieClip> 
+*/

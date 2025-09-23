@@ -19,7 +19,8 @@ export default React.forwardRef<HTMLDivElement, TStage>(function Stage(
       id={id}
       ref={ref}
       sx={{
-        // border: '1px solid #60A5FA',
+        // border: '1px solid #e2e3e4ff',
+        // background: 'white',
         position: 'relative',
         overflow: 'hidden',
         maxWidth: width,
