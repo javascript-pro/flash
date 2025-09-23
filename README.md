@@ -38,12 +38,12 @@ Think of it as a lightweight, modern take on the Flash timeline:
 
 ## Colours
 
-```json
-// #60A5FA  
-// #93C5FD  
-// #001321  
-// #000000
+#60A5FA  
+#93C5FD  
+#001321  
+#000000
 
+```json
 "themes": {
     "dark": {
       "mode": "dark",
