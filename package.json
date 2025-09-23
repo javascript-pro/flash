@@ -3,7 +3,8 @@
   "version": "8.0.0",
   "description": "Flash-like React implementation",
   "scripts": {
-    "start": "cd ./app && npm start"
+    "start": "cd ./app && npm start",
+    "deploy": "cd ./app && npm run build && firebase deploy"
   },
   "repository": {
     "type": "git",

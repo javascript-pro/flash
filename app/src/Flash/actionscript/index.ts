@@ -1,5 +1,5 @@
 // /app/src/Flash/actionscript/index.ts
-import setup from './setup';
+import dropIn from './dropIn';
 
 export default class ActionScript {
   private target: HTMLElement | null;
@@ -24,7 +24,7 @@ export default class ActionScript {
 
   setup(id: string, options: any) {
     setTimeout(() => {
-      setup(id, options);
+      dropIn(id, options);
     }, 100)
     
   }

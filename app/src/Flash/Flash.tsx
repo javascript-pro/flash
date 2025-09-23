@@ -8,6 +8,7 @@ import {
   Stage, 
   MovieClip,
   Bolt,
+  Controls,
 } from '../Flash';
 import ActionScript from './actionscript';
 
@@ -33,9 +34,15 @@ export default function Flash({ config = {} }: { config?: TFlashConfig }) {
           }}
         >
           <Stage id="intro" width={width} height={height} ref={stageRef}>
+            
+            <MovieClip id="mc_controls" height={50} >
+              <Controls />
+            </MovieClip>
+            
             <MovieClip id="mc_bolt">
               <Bolt />
             </MovieClip>
+            
           </Stage>
         </Box>
       </System>
