@@ -1,10 +1,6 @@
 // /Users/goldlabel/GitHub/core/gl-core/cartridges/Flash/movieclips/Bolt.tsx
 import React from 'react';
 import { TMovieClip } from '../types';
-import { 
-  SvgIcon, 
-  // useTheme 
-} from '@mui/material';
 
 export default function Bolt({ ...props }: TMovieClip) {
   // const theme = useTheme();

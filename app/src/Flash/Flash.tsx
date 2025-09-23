@@ -4,10 +4,9 @@ import { Box } from '@mui/material';
 import { TFlashConfig } from './types';
 import { 
   UbereduxProvider,
-  Trace, 
+  // Trace, 
   Stage, 
-  MovieClip, 
-  Pingpongball,
+  MovieClip,
   Bolt,
 } from '../Flash';
 import ActionScript from './actionscript';
