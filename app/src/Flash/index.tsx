@@ -5,6 +5,8 @@ import Stage from './lib/Stage';
 import MovieClip from './lib/MovieClip';
 import Macromedia from './movieclips/Macromedia';
 import Pingpongball from './movieclips/Pingpongball';
+import Bolt from './movieclips/Bolt';
+
 // optional
 import{subMUITheme} from './lib/subMUITheme';
 import Icon from './lib/Icon';
@@ -22,6 +24,7 @@ export {
     MovieClip,
     Macromedia,
     Pingpongball,
+    Bolt,
 }
 // optional
 export {

@@ -5,17 +5,19 @@ import { TTrace } from '../types';
 import { 
   IconButton,
 } from '@mui/material';
-import { Icon } from '../../Flash';
+import { Icon, useRedux } from '../../Flash';
 
 export default function Trace({ children }: TTrace) {
-  // if (!children) return null;
 
+  const s = useRedux();
+  const show = false;
   return (
     <Box id="trace">
       <IconButton>
         <Icon icon="fingerprint" color="primary" />
       </IconButton>
       {children}
+      {show ? <pre>s: {JSON.stringify(s, null, 2)}</pre> : null}
     </Box>
   );
 }

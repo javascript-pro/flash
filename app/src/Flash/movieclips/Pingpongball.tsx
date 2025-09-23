@@ -3,10 +3,10 @@ import React from 'react';
 import { TMovieClip } from '../types';
 import { SvgIcon, useTheme } from '@mui/material';
 
-export default function Pingpongball({ color, ...props }: TMovieClip) {
+export default function Pingpongball({ ...props }: TMovieClip) {
   const theme = useTheme();
   const smile = theme.palette.background.default;
-  const mainColor = color || theme.palette.primary.main;
+  const mainColor = theme.palette.primary.main;
 
   return (
       <SvgIcon {...props}>

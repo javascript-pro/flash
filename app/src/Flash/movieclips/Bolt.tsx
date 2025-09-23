@@ -1,23 +1,26 @@
-// /Users/goldlabel/GitHub/core/gl-core/cartridges/Flash/movieclips/Pingpongball.tsx
+// /Users/goldlabel/GitHub/core/gl-core/cartridges/Flash/movieclips/Bolt.tsx
 import React from 'react';
 import { TMovieClip } from '../types';
-import { SvgIcon, useTheme } from '@mui/material';
+import { 
+  SvgIcon, 
+  // useTheme 
+} from '@mui/material';
 
-export default function Bolt({ color, ...props }: TMovieClip) {
-  const theme = useTheme();
-  const smile = theme.palette.background.default;
-  const mainColor = color || theme.palette.primary.main;
+export default function Bolt({ ...props }: TMovieClip) {
+  // const theme = useTheme();
+  // const smile = theme.palette.background.default;
+  // const mainColor = color || theme.palette.primary.main;
 
-  return (
-      <SvgIcon {...props}>
-        <path
-          d="M11.9316955,0.00778516743 C18.2793961,0.234625 23.2318292,5.339499 22.9916183,11.4103978 C22.7565183,17.4812966 17.4207699,22.2190224 11.0730694,21.9921826 C4.72536881,21.7653428 -0.227064254,16.6604688 0.00803576687,10.58957 C0.248246659,4.51867123 5.58399495,-0.218565786 11.9316955,0.00778516743 Z"
-          fill={mainColor}
-        />
-        <path
-          d="M8,12 C12.6203742,21.9973959 20,13.9133228 20,13.9133228 C14.7209979,15.4126605 8,12 8,12 Z"
-          fill={smile}
-        />
-      </SvgIcon>
+  return (  
+  <svg width="200px" height="400px" viewBox="0 0 200 400">
+    <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+        <g id="bolt">
+            <polygon fill="#001321" points="99.7984778 3.93120393 23.6453202 188.133201 95.7904165 188.133201 55.7098074 380.34398 200 144.084897 127.854903 144.084897 171.943573 3.93120393"></polygon>
+            <polygon fill="#2F69A8" points="93.8871473 3.93120393 17.7339901 188.133201 89.8790864 188.133201 49.7984773 380.34398 194.08867 144.084897 121.943573 144.084897 166.032243 3.93120393"></polygon>
+            <polygon fill="gold" fillRule="nonzero" points="76.046798 0 0 184 80.0492611 184 36.0221675 400 192.118227 136 112.068966 136 156.096059 0"></polygon>
+        </g>
+    </g>
+</svg>
+
   );
 }

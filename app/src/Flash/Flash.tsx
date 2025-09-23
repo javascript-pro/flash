@@ -2,7 +2,14 @@
 import React from 'react';
 import { Box } from '@mui/material';
 import { TFlashConfig } from './types';
-import { Trace, Stage, MovieClip, Macromedia, Pingpongball, UbereduxProvider } from '../Flash';
+import { 
+  UbereduxProvider,
+  Trace, 
+  Stage, 
+  MovieClip, 
+  Pingpongball,
+  Bolt,
+} from '../Flash';
 import ActionScript from './actionscript';
 
 export default function Flash({ config = {} }: { config?: TFlashConfig }) {
@@ -27,18 +34,24 @@ export default function Flash({ config = {} }: { config?: TFlashConfig }) {
           height: '100%',
         }}
       >
-        <Stage id="stage_1" width={width} height={height} ref={stageRef}>
-          <MovieClip id="mc_macromedia">
-            <Macromedia />
+        <Stage id="stage_intro" width={width} height={height} ref={stageRef}>
+          
+          <MovieClip 
+            // border 
+            id="mc_bolt" 
+            // width={200} 
+            // height={400}
+          >
+            <Bolt />
           </MovieClip>
-
-          <MovieClip id="mc_pingpongball">
-            <Pingpongball />
-          </MovieClip>
-
-          <MovieClip id="mc_trace">
+          
+          {/* <MovieClip 
+            border
+            id="mc_trace"
+            width={42} 
+            height={42}>
             <Trace />
-          </MovieClip>
+          </MovieClip> */}
         </Stage>
       </Box>
     </UbereduxProvider>

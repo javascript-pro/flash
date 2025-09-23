@@ -6,7 +6,13 @@ import { useDispatch } from '../hooks/useDispatch';
 import { useRedux } from '../hooks/useRedux';
 import { setUbereduxKey } from '../lib/store';
 
-export default function MovieClip({ id, children, border }: TMovieClip) {
+export default function MovieClip({ 
+  id, 
+  children, 
+  border,
+  width = '100%',
+  height = '100%',
+}: TMovieClip) {
   const dispatch = useDispatch();
   const redux = useRedux();
   const clips: string[] = redux?.clips ?? [];
@@ -38,7 +44,14 @@ export default function MovieClip({ id, children, border }: TMovieClip) {
   }, [id]); // intentionally only on mount/unmount
 
   return (
-    <Box id={id} sx={{ ...(border && { border: '1px solid red' }) }}>
+    <Box 
+      id={id} 
+      sx={{ 
+        width,
+        height,
+        ...(border && { border: '1px solid green' }) 
+      }}
+    >
       {children}
     </Box>
   );

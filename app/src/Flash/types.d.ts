@@ -12,7 +12,8 @@ export type TMovieClip = {
   id?: string;
   children?: React.ReactNode;
   border?: boolean;
-  color?: string;
+  width?: number | string;
+  height?: number | string;
 };
 
 export type TFlashConfig = {
