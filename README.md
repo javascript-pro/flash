@@ -27,7 +27,7 @@ Think of it as a lightweight, modern take on the Flash timeline:
 - 🪄 Trace — a debugging movieclip that pops live info (stage size, framerate, store flags).  
 - 📦 Cartridge — fully modular, drop into any Goldlabel project.
 
-## 🧩 Features (planned)
+## 🧩 Future Features
 
 - Physics-based behaviours like `floorDropBounce` and `ceilingDropBounce`.  
 - Infinite scrolling (`scrollLeftRight`) with wrapping.  
@@ -36,12 +36,7 @@ Think of it as a lightweight, modern take on the Flash timeline:
 - Plug-and-play movieclips and quick demo examples.  
 
 
-## Colours
 
-#60A5FA  
-#93C5FD  
-#001321  
-#000000
 
 ```json
 "themes": {
@@ -65,3 +60,10 @@ Think of it as a lightweight, modern take on the Flash timeline:
     }
   }
 ```
+
+## More Colours
+
+#60A5FA  
+#93C5FD  
+#001321  
+#000000
