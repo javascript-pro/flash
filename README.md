@@ -2,10 +2,13 @@
 
 A modular animation cartridge for [Goldlabel](https://goldlabel.pro), inspired by the spirit of old-skool Flash. Built with **React, GSAP, and TypeScript**.
 
-#60A5FA
-#93C5FD
-#001321
-#000000
+
+```
+#60A5FA  
+#93C5FD  
+#001321  
+#000000  
+```
 
 
 ## 🚀 Quick Start

@@ -1,9 +1,9 @@
 // /Users/goldlabel/GitHub/flash/app/src/Uberedux/initialState.tsx
-import pJSON from '../../package.json';
 import { TState } from './types';
+import config from './config.json';
 
 export const initialState: TState = {
-  vs: pJSON.version,
+  config,
   created: Date.now(),
   cartridge: 'flash',
   clips: [],

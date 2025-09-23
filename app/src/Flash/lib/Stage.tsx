@@ -16,7 +16,7 @@ export default React.forwardRef<HTMLDivElement, TStage>(function Stage(
       sx={{
         position: 'relative',
         overflow: 'hidden',
-        border: '1px solid red',
+        border: '1px solid #60A5FA',
         // let Stage shrink within its container, but never exceed config
         maxWidth: width,
         maxHeight: height,
