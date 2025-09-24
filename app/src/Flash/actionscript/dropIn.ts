@@ -44,7 +44,7 @@ export default function dropIn(id: string, options: TDropInOptions = {}) {
 
   // Drop into center with bounce
   tl.to(target, {
-    y: stageRect.height - targetRect.height / 1.15,
+    y: 100,
     duration: 0.8 * speed,
     ease: 'bounce.out',
   });

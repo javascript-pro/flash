@@ -8,6 +8,7 @@ import Macromedia from './movieclips/Macromedia';
 import Pingpongball from './movieclips/Pingpongball';
 import Bolt from './movieclips/Bolt';
 import Controls from './movieclips/Controls';
+import Text from './movieclips/Text';
 
 // optional
 import {setSystemKey} from './actions/setSystemKey';
@@ -32,6 +33,7 @@ export {
     Pingpongball,
     Bolt,
     Controls, 
+    Text,
 }
 // optional
 export {

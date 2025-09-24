@@ -9,6 +9,7 @@ import {
   MovieClip,
   Bolt,
   Controls,
+  Text,
 } from '../Flash';
 import ActionScript from './actionscript';
 
@@ -18,7 +19,7 @@ export default function Flash({ config = {} }: { config?: TFlashConfig }) {
   
   React.useEffect(() => {
       const flash = new ActionScript(stageRef.current);
-      flash.setup("mc_bolt", { speed: 5 });
+      flash.setup("mc_bolt", { speed: 3 });
   }, []);
 
   return (
@@ -34,29 +35,28 @@ export default function Flash({ config = {} }: { config?: TFlashConfig }) {
           }}
         >
           <Stage id="intro" width={width} height={height} ref={stageRef}>
-            
-            <MovieClip id="mc_controls" height={50} >
+            <MovieClip id="mc_controls" height={50} zIndex={15}>
               <Controls />
             </MovieClip>
-            
-            <MovieClip id="mc_bolt">
+
+            <MovieClip id="mc_bolt" height={50} zIndex={5}>
               <Bolt />
             </MovieClip>
-            
+
+            <MovieClip width={350} id="mc_text" zIndex={10}>
+              <Text 
+                id="text_hello"
+                text="Hello Flash!"
+                variant="h4"
+                color="gold"
+                fontFamily="Arial"
+                split="chars"
+              />
+            </MovieClip>
           </Stage>
+
         </Box>
       </System>
     </UbereduxProvider>
   );
 }
-
-
-/* 
-  <MovieClip 
-    border
-    id="mc_trace"
-    width={42} 
-    height={42}>
-    <Trace />
-  </MovieClip> 
-*/

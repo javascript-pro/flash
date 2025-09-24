@@ -12,7 +12,8 @@ export default function MovieClip({
   border,
   width = '100%',
   height = '100%',
-}: TMovieClip) {
+  zIndex,
+}: TMovieClip & { zIndex?: number }) {
   const dispatch = useDispatch();
   const redux = useRedux();
   const clips: string[] = redux?.clips ?? [];
@@ -47,10 +48,13 @@ export default function MovieClip({
     <Box 
       id={id} 
       sx={{ 
-        // opacity: 0,
+        position: 'absolute',
+        top: 0,
+        left: 0,
         width,
         height,
-        ...(border && { border: '1px solid green' }) 
+        zIndex,
+        ...(border && { border: '1px solid gold' }) 
       }}
     >
       {children}
