@@ -34,6 +34,7 @@ export default function Controls({ id }: any) {
       
       
       <Button
+        sx={{mr:2}}
         color="primary"
         startIcon={<Icon icon="reset" />}
         onClick={() => {

@@ -6,10 +6,10 @@ import Stage from './lib/Stage';
 import MovieClip from './lib/MovieClip';
 import Macromedia from './movieclips/Macromedia';
 import Pingpongball from './movieclips/Pingpongball';
-import Bolt from './movieclips/Bolt';
 import Controls from './movieclips/Controls';
 import Text from './movieclips/Text';
 
+// State
 import {useFlash} from './hooks/useFlash';
 import {setFlashKey} from './actions/setFlashKey';
 
@@ -26,6 +26,14 @@ import {useDispatch} from './hooks/useDispatch';
 import {useIsMobile} from './hooks/useIsMobile';
 import {usePrefersColorScheme} from './hooks/usePrefersColorScheme';
 
+// Logo
+import Bolt from './movieclips/logo/Bolt';
+
+// Logo
+export {
+    Bolt,
+};
+
 export {
     Flash,
     System,
@@ -34,7 +42,6 @@ export {
     MovieClip,
     Macromedia,
     Pingpongball,
-    Bolt,
     Controls, 
     Text,
 }

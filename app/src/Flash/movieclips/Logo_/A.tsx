@@ -1,6 +1,6 @@
-// /Users/goldlabel/GitHub/core/gl-core/cartridges/Flash/movieclips/Bolt.tsx
+// /Users/goldlabel/GitHub/core/gl-core/cartridges/Flash/movieclips/logo/A.tsx
 import React from 'react';
-import { TMovieClip } from '../types';
+import { TMovieClip } from '../../types';
 import { useTheme } from '@mui/material';
 
 export default function Bolt({ ...props }: TMovieClip) {
