@@ -5,7 +5,7 @@ import { useTheme } from '@mui/material';
 
 export default function Bolt({ ...props }: TMovieClip) {
   const theme = useTheme();
-  const frontColor = theme.palette.text.primary;
+  const frontColor = theme.palette.primary.main;
 
   return (  
   <svg width="200px" height="400px" viewBox="0 0 200 400">

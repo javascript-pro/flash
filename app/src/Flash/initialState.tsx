@@ -7,4 +7,7 @@ export const initialState: TState = {
   system: {
     themeMode: null,
   },
+  flash: {
+    resetRequested: false,
+  },
 };

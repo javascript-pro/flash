@@ -7,7 +7,6 @@ import {
   useSystem, 
   setSystemKey,
   useConfig,
-  usePrefersColorScheme, 
   useDispatch,
 } from '../../Flash';
 
@@ -15,31 +14,39 @@ type TSystemProps = {
   children?: React.ReactNode;
 };
 
-export default function System({ 
-  children = null,
-}: TSystemProps) {
+export default function System({ children = null }: TSystemProps) {
   const dispatch = useDispatch();
   const { themeMode } = useSystem();
   const { themes } = useConfig();
-  const systemColor = usePrefersColorScheme();
 
-  // Set themeMode to system preference on first mount if not already set
+  // Listen for system color scheme changes
   React.useEffect(() => {
+    const mq = window.matchMedia('(prefers-color-scheme: dark)');
+
+    const applySystemColor = (isDark: boolean) => {
+      const newMode = isDark ? 'dark' : 'light';
+      dispatch(setSystemKey('themeMode', newMode));
+    };
+
+    // Initial set if not already defined
     if (!themeMode) {
-      dispatch(setSystemKey('themeMode', systemColor));
+      applySystemColor(mq.matches);
     }
-  }, [themeMode, systemColor, dispatch]);
 
-  // if (themeMode) return null;
+    // Update whenever system changes
+    const handler = (e: MediaQueryListEvent) => applySystemColor(e.matches);
+    mq.addEventListener('change', handler);
 
-  const theme = themes[themeMode]
+    return () => mq.removeEventListener('change', handler);
+  }, [themeMode, dispatch]);
+
+  // Pick theme safely
+  const theme = themes[themeMode ?? 'light']; // fallback
   const newTheme = subMUITheme(theme);
 
   return (
     <ThemeProvider theme={newTheme}>
       <CssBaseline />
-      {/* Debugging: */}
-      {/* <pre>{JSON.stringify({ themeMode, systemColor, themes }, null, 2)}</pre> */}
       {children}
     </ThemeProvider>
   );

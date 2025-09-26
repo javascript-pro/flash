@@ -1,14 +1,26 @@
 // /Users/goldlabel/GitHub/flash/app/src/Flash/movieclips/Controls.tsx
 import React from 'react';
 import { 
-    Box,
-    IconButton,
+  Box,
+  IconButton,
 } from '@mui/material';
-import { Icon } from '../../Flash';
+import { 
+  Icon, 
+  useDispatch, 
+  useSystem, 
+  setSystemKey, 
+  setFlashKey,
+} from '../../Flash';
 
-export default function Controls({ 
-  id,
-}: any) {
+export default function Controls({ id }: any) {
+  const dispatch = useDispatch();
+  const s = useSystem();
+  const { themeMode } = s;
+
+  const toggleTheme = () => {
+    dispatch(setSystemKey("themeMode", themeMode === "light" ? "dark" : "light"));
+  };
+
   return (
     <Box 
       id={id} 
@@ -17,14 +29,23 @@ export default function Controls({
         // border: '1px solid red',
       }}
     >
-        <Box sx={{flexGrow:1}}/>
-        <IconButton
-            color="primary"
-            onClick={() => {
-
-            }}>
-            <Icon icon="reset" />
-        </IconButton>
+      <Box sx={{ flexGrow: 1 }} />
+      <IconButton
+        color="primary"
+        onClick={toggleTheme}
+      >
+        <Icon icon={themeMode === "light" ? "darkmode" : "lightmode"} />
+      </IconButton>
+      <IconButton
+        color="primary"
+        onClick={() => {
+          // TODO: implement reset
+          dispatch(setFlashKey("resetRequested", true));
+        }}
+      >
+        <Icon icon="reset" />
+      </IconButton>
+      <Box sx={{ flexGrow: 1 }} />
     </Box>
   );
 }

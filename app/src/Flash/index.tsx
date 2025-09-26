@@ -10,6 +10,9 @@ import Bolt from './movieclips/Bolt';
 import Controls from './movieclips/Controls';
 import Text from './movieclips/Text';
 
+import {useFlash} from './hooks/useFlash';
+import {setFlashKey} from './actions/setFlashKey';
+
 // optional
 import {setSystemKey} from './actions/setSystemKey';
 import{subMUITheme} from './lib/subMUITheme';
@@ -48,4 +51,6 @@ export {
     useIsMobile,
     useConfig,
     usePrefersColorScheme,
+    useFlash,
+    setFlashKey,
 }
