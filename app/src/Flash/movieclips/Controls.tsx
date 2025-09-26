@@ -3,14 +3,14 @@ import React from 'react';
 import { 
   Box,
   IconButton,
-  Button,
+  // Button,
 } from '@mui/material';
 import { 
   Icon, 
   useDispatch, 
   useSystem, 
   setSystemKey, 
-  setFlashKey,
+  // setFlashKey,
 } from '../../Flash';
 
 export default function Controls({ id }: any) {
@@ -33,7 +33,7 @@ export default function Controls({ id }: any) {
       <Box sx={{ flexGrow: 1 }} />
       
       
-      <Button
+      {/* <Button
         sx={{mr:2}}
         color="primary"
         startIcon={<Icon icon="reset" />}
@@ -43,7 +43,7 @@ export default function Controls({ id }: any) {
         variant='contained'
       >
         Start Over
-      </Button>
+      </Button> */}
 
       <IconButton
         color="primary"
@@ -52,7 +52,7 @@ export default function Controls({ id }: any) {
         <Icon icon={themeMode === "light" ? "darkmode" : "lightmode"} />
       </IconButton>
 
-      <Box sx={{ flexGrow: 1 }} />
+      {/* <Box sx={{ flexGrow: 1 }} /> */}
     </Box>
   );
 }

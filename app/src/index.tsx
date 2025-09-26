@@ -15,8 +15,8 @@ root.render(
       <System>
         <Flash
           config={{
-            width: 750, // "100%",
-            height: 550, // "100%",
+            width: "100%",
+            height: "100%",
           }}
         />
       </System>

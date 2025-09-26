@@ -13,6 +13,7 @@ export default function MovieClip({
   width = '100%',
   height = '100%',
   zIndex,
+  style,
 }: TMovieClip & { zIndex?: number }) {
   const dispatch = useDispatch();
   const redux = useRedux();
@@ -48,6 +49,7 @@ export default function MovieClip({
     <Box 
       id={id} 
       sx={{ 
+        ...style,
         position: 'absolute',
         top: 0,
         left: 0,

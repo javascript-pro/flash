@@ -1,20 +1,24 @@
 // /Users/goldlabel/GitHub/core/gl-core/cartridges/Flash/movieclips/logo/A.tsx
 import React from 'react';
 import { TMovieClip } from '../../types';
-import { useTheme } from '@mui/material';
+// import { useTheme } from '@mui/material';
 
 export default function A({ ...props }: TMovieClip) {
-  const theme = useTheme();
-  const frontColor = theme.palette.primary.main;
+  // const theme = useTheme();
+  // const frontColor = theme.palette.primary.main;
 
   return (  
-  <svg width="166px" height="250px" viewBox="0 0 166 250">
-    <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
-        <g id="A">
-            <path d="M4.04878049,250 L85.0243902,7.08502024 L166,250 L100.207317,250 L85.0243902,194.331984 L59.7195122,194.331984 L44.5365854,250 L4.04878049,250 Z M69.8414634,153.846154 L85.0243902,103.238866 L100.207317,153.846154 L69.8414634,153.846154 Z" id="A_black" fill="#FF0000"></path>
-            <path d="M0,242.91498 L80.9756098,0 L161.95122,242.91498 L96.1585366,242.91498 L80.9756098,187.246964 L55.6707317,187.246964 L40.4878049,242.91498 L0,242.91498 Z M65.7926829,146.761134 L80.9756098,96.1538462 L96.1585366,146.761134 L65.7926829,146.761134 Z" id="A_white" fill={frontColor}></path>
+
+<svg width="350px" height="400px" viewBox="0 0 350 400">
+    <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+        <g id="Logo" transform="translate(-1021.866, -124.0688)">
+            <g id="A" transform="translate(1021.866, 124.0688)">
+                <path d="M8.4,400 L178.9,11 L349.4,400 L210.86875,400 L178.9,310.854167 L125.61875,310.854167 L93.65,400 L8.4,400 Z M146.93125,246.020833 L178.9,164.979167 L210.86875,246.020833 L146.93125,246.020833 Z" id="black" fill="#000000"></path>
+                <path d="M-11.6,370 L158.9,-19 L329.4,370 L190.86875,370 L158.9,280.854167 L105.61875,280.854167 L73.65,370 L-11.6,370 Z M126.93125,216.020833 L158.9,134.979167 L190.86875,216.020833 L126.93125,216.020833 Z" id="blue" fill="#60A5FA"></path>
+                <path d="M0.4,389 L170.9,0 L341.4,389 L202.86875,389 L170.9,299.854167 L117.61875,299.854167 L85.65,389 L0.4,389 Z M138.93125,235.020833 L170.9,153.979167 L202.86875,235.020833 L138.93125,235.020833 Z" id="white" stroke="#052841" stroke-width="10" fill="#FFFFFF"></path>
+            </g>
         </g>
     </g>
-  </svg>
+</svg>
   );
 }

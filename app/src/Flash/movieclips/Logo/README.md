@@ -6,3 +6,6 @@ The logo consists of 6 MovieClips, the lightning bolt and the 5 letters F,L,A,S,
 
 They are composed into a clip called Logo, which makes it easy to include it anywhere 
 
+
+That and the ActionScript Class LogoAS.ts
+

@@ -5,15 +5,13 @@ import { TFlashConfig } from './types';
 import {
   Stage, 
   MovieClip,
-  Bolt,
   Controls,
   useFlash,
   setFlashKey,
   useDispatch,
-
-  Logo,
 } from '../Flash';
 import ActionScript from './actionscript';
+import {Logo} from './movieclips/Logo'
 
 export default function Flash({ config = {} }: { config?: TFlashConfig }) {
   const { width = 300, height = 200 } = config;

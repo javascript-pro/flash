@@ -11,6 +11,7 @@ export { TUbereduxDispatch, TRootState };
 export type TMovieClip = {
   id?: string;
   children?: React.ReactNode;
+  style?: any;
   border?: boolean;
   width?: number | string;
   height?: number | string;
