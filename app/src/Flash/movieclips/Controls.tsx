@@ -3,6 +3,7 @@ import React from 'react';
 import { 
   Box,
   IconButton,
+  Button,
 } from '@mui/material';
 import { 
   Icon, 
@@ -30,21 +31,26 @@ export default function Controls({ id }: any) {
       }}
     >
       <Box sx={{ flexGrow: 1 }} />
+      
+      
+      <Button
+        color="primary"
+        startIcon={<Icon icon="reset" />}
+        onClick={() => {
+          dispatch(setFlashKey("resetRequested", true));
+        }}
+        variant='contained'
+      >
+        Start Over
+      </Button>
+
       <IconButton
         color="primary"
         onClick={toggleTheme}
       >
         <Icon icon={themeMode === "light" ? "darkmode" : "lightmode"} />
       </IconButton>
-      <IconButton
-        color="primary"
-        onClick={() => {
-          // TODO: implement reset
-          dispatch(setFlashKey("resetRequested", true));
-        }}
-      >
-        <Icon icon="reset" />
-      </IconButton>
+
       <Box sx={{ flexGrow: 1 }} />
     </Box>
   );
