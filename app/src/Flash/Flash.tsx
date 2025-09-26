@@ -10,6 +10,8 @@ import {
   useFlash,
   setFlashKey,
   useDispatch,
+
+  Logo,
 } from '../Flash';
 import ActionScript from './actionscript';
 
@@ -50,9 +52,7 @@ export default function Flash({ config = {} }: { config?: TFlashConfig }) {
           <Controls />
         </MovieClip>
 
-        <MovieClip id="mc_bolt" height={50} zIndex={5}>
-          <Bolt />
-        </MovieClip>
+        <Logo id="flash_logo" />
 
       </Stage>
     </Box>

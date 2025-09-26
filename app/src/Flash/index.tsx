@@ -27,11 +27,17 @@ import {useIsMobile} from './hooks/useIsMobile';
 import {usePrefersColorScheme} from './hooks/usePrefersColorScheme';
 
 // Logo
-import Bolt from './movieclips/logo/Bolt';
+import LogoAS from './movieclips/Logo/LogoAS';
+import Logo from './movieclips/Logo/Logo';
+import Bolt from './movieclips/Logo/Bolt';
+import A from './movieclips/Logo/A';
 
 // Logo
 export {
+    LogoAS,
+    Logo,
     Bolt,
+    A,
 };
 
 export {

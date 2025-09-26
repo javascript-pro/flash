@@ -3,7 +3,7 @@ import React from 'react';
 import { TMovieClip } from '../../types';
 import { useTheme } from '@mui/material';
 
-export default function Bolt({ ...props }: TMovieClip) {
+export default function A({ ...props }: TMovieClip) {
   const theme = useTheme();
   const frontColor = theme.palette.primary.main;
 
