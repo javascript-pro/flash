@@ -3,14 +3,14 @@ import React from 'react';
 import { 
   Box,
   IconButton,
-  // Button,
+  Button,
 } from '@mui/material';
 import { 
   Icon, 
   useDispatch, 
   useSystem, 
   setSystemKey, 
-  // setFlashKey,
+  setFlashKey,
 } from '../../Flash';
 
 export default function Controls({ id }: any) {
@@ -27,23 +27,22 @@ export default function Controls({ id }: any) {
       id={id} 
       sx={{ 
         display: 'flex',
-        // border: '1px solid red',
       }}
     >
       <Box sx={{ flexGrow: 1 }} />
       
       
-      {/* <Button
+      <Button
         sx={{mr:2}}
         color="primary"
         startIcon={<Icon icon="reset" />}
         onClick={() => {
-          dispatch(setFlashKey("resetRequested", true));
+          // dispatch(setFlashKey("resetRequested", true));
         }}
         variant='contained'
       >
-        Start Over
-      </Button> */}
+        Replay
+      </Button>
 
       <IconButton
         color="primary"

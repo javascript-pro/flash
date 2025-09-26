@@ -1,11 +1,13 @@
 // /app/src/Flash/movieclips/Logo/LogoAS.ts
 import { gsap } from "gsap";
 
+type ClickRec = { el: Element; fn: EventListener };
+
 export default class LogoAS {
   private id: string;
   private resizeHandler: (() => void) | null = null;
-  private clickHandlers: Array<{ el: Element; fn: EventListener }> = [];
-  private hoverHandlers: Array<{ el: Element; fn: EventListener; type: string }> = [];
+  private clickHandlers: ClickRec[] = [];
+  private wrappers = new Map<Element, SVGGElement>(); // original element -> wrapper <g>
 
   constructor(id: string) {
     this.id = id;
@@ -21,19 +23,21 @@ export default class LogoAS {
     const logoEl = document.getElementById(this.id);
     if (!logoEl) return;
 
-    // Reset transforms
-    gsap.set(logoEl, { clearProps: "all" });
-
-    // Ensure all child elements use local transform origins
-    const clips = logoEl.querySelectorAll("g, path, polygon, rect, circle, text");
-    clips.forEach((el) => {
-      (el as HTMLElement).style.transformBox = "fill-box";
-      (el as HTMLElement).style.transformOrigin = "50% 50%";
-    });
+    // Reset transforms on the container only
+    gsap.set(logoEl, { clearProps: "transform,opacity,filter" });
 
     const { offsetX, offsetY, scale } = this.calculateCenter(logoEl);
 
-    gsap.fromTo(
+    const tl = gsap.timeline({
+      onComplete: () => {
+        // Prepare targets, handlers, and run wave after intro animation
+        this.prepareTargets(logoEl);
+        this.attachClickHandlers();
+        this.wave(0.1);
+      },
+    });
+
+    tl.fromTo(
       logoEl,
       {
         autoAlpha: 0,
@@ -52,8 +56,6 @@ export default class LogoAS {
         ease: "power3.out",
       }
     );
-
-    this.attachInteractionHandlers(logoEl);
   }
 
   private calculateCenter(el: HTMLElement) {
@@ -94,60 +96,80 @@ export default class LogoAS {
     });
   }
 
-  private attachInteractionHandlers(container: HTMLElement) {
-    this.detachInteractionHandlers();
+  // Wrap each clickable element in its own <g> so shakes don't disturb layout.
+  private prepareTargets(container: HTMLElement) {
+    this.detachClickHandlers();
+    this.wrappers.clear();
 
-    const clips = container.querySelectorAll("g, path, polygon, rect, circle, text");
-    clips.forEach((el) => {
-      // Click -> shake
-      const clickFn = () => this.shake(el);
+    const selector =
+      "[id]:not(svg):not(defs):not(clipPath):not(mask):not(pattern):not(linearGradient):not(radialGradient):not(marker):not(title):not(desc):not(metadata)";
+    const nodes = Array.from(container.querySelectorAll<Element>(selector)).filter(
+      (el) => (el as HTMLElement).id !== this.id
+    );
+
+    nodes.forEach((el) => {
+      if (this.wrappers.has(el)) return;
+
+      // If it's already a <g>, use it directly
+      if (el.tagName.toLowerCase() === "g") {
+        (el as SVGElement).style.transformBox = "fill-box";
+        (el as SVGElement).style.transformOrigin = "50% 50%";
+        (el as SVGElement).style.cursor = "pointer";
+        gsap.set(el, { transformOrigin: "50% 50%" });
+        this.wrappers.set(el, el as SVGGElement);
+        return;
+      }
+
+      const parent = el.parentNode;
+      if (!parent) return;
+
+      const ns = "http://www.w3.org/2000/svg";
+      const wrap = document.createElementNS(ns, "g");
+
+      (wrap as SVGElement).style.transformBox = "fill-box";
+      (wrap as SVGElement).style.transformOrigin = "50% 50%";
+      (wrap as SVGElement).style.cursor = "pointer";
+
+      const existingSVGTransform = (el as SVGGraphicsElement).getAttribute("transform");
+      if (existingSVGTransform) {
+        wrap.setAttribute("transform", existingSVGTransform);
+        (el as SVGGraphicsElement).removeAttribute("transform");
+      }
+
+      const cssTx = (el as SVGElement).style.transform;
+      if (cssTx && cssTx !== "none") {
+        (wrap as SVGElement).style.transform = cssTx;
+        (el as SVGElement).style.transform = "";
+      }
+
+      parent.insertBefore(wrap, el);
+      wrap.appendChild(el);
+
+      gsap.set(wrap, { transformOrigin: "50% 50%" });
+
+      this.wrappers.set(el, wrap);
+    });
+  }
+
+  private attachClickHandlers() {
+    this.detachClickHandlers();
+
+    this.wrappers.forEach((wrap, el) => {
+      const clickFn = () => this.shake(wrap);
       el.addEventListener("click", clickFn);
       this.clickHandlers.push({ el, fn: clickFn });
-
-      // Hover -> scale up/down
-      const hoverIn = () => {
-        gsap.killTweensOf(el); // cancel any active animation
-        gsap.to(el, {
-          scale: 1.1,
-          transformOrigin: "50% 50%",
-          duration: 0.2,
-          ease: "power2.out",
-        });
-      };
-      const hoverOut = () => {
-        gsap.killTweensOf(el);
-        gsap.to(el, {
-          scale: 1,
-          transformOrigin: "50% 50%",
-          duration: 0.2,
-          ease: "power2.inOut",
-        });
-      };
-
-      el.addEventListener("mouseenter", hoverIn);
-      el.addEventListener("mouseleave", hoverOut);
-
-      this.hoverHandlers.push({ el, fn: hoverIn, type: "mouseenter" });
-      this.hoverHandlers.push({ el, fn: hoverOut, type: "mouseleave" });
     });
   }
 
-  private detachInteractionHandlers() {
-    this.clickHandlers.forEach(({ el, fn }) => {
-      el.removeEventListener("click", fn);
-    });
+  private detachClickHandlers() {
+    this.clickHandlers.forEach(({ el, fn }) => el.removeEventListener("click", fn));
     this.clickHandlers = [];
-
-    this.hoverHandlers.forEach(({ el, fn, type }) => {
-      el.removeEventListener(type, fn);
-    });
-    this.hoverHandlers = [];
   }
 
-  private shake(el: Element) {
-    gsap.killTweensOf(el); // cancel hover scale if running
+  private shake(target: Element) {
+    gsap.killTweensOf(target);
     gsap.fromTo(
-      el,
+      target,
       { x: -2, rotation: -1, transformOrigin: "50% 50%" },
       {
         x: 2,
@@ -157,10 +179,27 @@ export default class LogoAS {
         yoyo: true,
         repeat: 5,
         onComplete: () => {
-          gsap.set(el, { x: 0, rotation: 0, scale: 1 });
+          gsap.set(target, { x: 0, rotation: 0 });
         },
       }
     );
+  }
+
+  // 🔥 New: run shake across all wrappers in left-to-right order
+  wave(stagger: number = 0.1) {
+    const items = Array.from(this.wrappers.values());
+    if (items.length === 0) return;
+
+    const sorted = items.sort((a, b) => {
+      const ra = a.getBoundingClientRect();
+      const rb = b.getBoundingClientRect();
+      return ra.left - rb.left;
+    });
+
+    const tl = gsap.timeline();
+    sorted.forEach((wrap, i) => {
+      tl.add(() => this.shake(wrap), i * stagger);
+    });
   }
 
   destroy() {
@@ -168,6 +207,7 @@ export default class LogoAS {
       window.removeEventListener("resize", this.resizeHandler);
       this.resizeHandler = null;
     }
-    this.detachInteractionHandlers();
+    this.detachClickHandlers();
+    this.wrappers.clear();
   }
 }
